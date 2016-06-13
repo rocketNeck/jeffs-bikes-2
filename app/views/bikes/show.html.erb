@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @bike.company %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @bike.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @bike.month %>
+</p>
+
+<p>
+  <strong>Serial number 1:</strong>
+  <%= @bike.serial_number_1 %>
+</p>
+
+<p>
+  <strong>Serial number 2:</strong>
+  <%= @bike.serial_number_2 %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @bike.model %>
+</p>
+
+<p>
+  <strong>Rim size:</strong>
+  <%= @bike.rim_size %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @bike.bike_type %>
+</p>
+
+<p>
+  <strong>Metal:</strong>
+  <%= @bike.metal %>
+</p>
+
+<p>
+  <strong>Top tube:</strong>
+  <%= @bike.top_tube %>
+</p>
+
+<p>
+  <strong>Head tube:</strong>
+  <%= @bike.head_tube %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @bike.color %>
+</p>
+
+<p>
+  <strong>Serial number location:</strong>
+  <%= @bike.serial_number_location %>
+</p>
+
+<%= link_to 'Edit', edit_bike_path(@bike) %> |
+<%= link_to 'Back', bikes_path %>

@@ -1,0 +1,69 @@
+<%= form_for(@bike) do |f| %>
+  <% if @bike.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bike.errors.count, "error") %> prohibited this bike from being saved:</h2>
+
+      <ul>
+      <% @bike.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br>
+    <%= f.text_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_number_1 %><br>
+    <%= f.text_field :serial_number_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_number_2 %><br>
+    <%= f.text_field :serial_number_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :rim_size %><br>
+    <%= f.text_field :rim_size %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :bike_type %>
+  </div>
+  <div class="field">
+    <%= f.label :metal %><br>
+    <%= f.text_field :metal %>
+  </div>
+  <div class="field">
+    <%= f.label :top_tube %><br>
+    <%= f.text_field :top_tube %>
+  </div>
+  <div class="field">
+    <%= f.label :head_tube %><br>
+    <%= f.text_field :head_tube %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_number_location %><br>
+    <%= f.text_field :serial_number_location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

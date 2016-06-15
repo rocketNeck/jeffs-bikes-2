@@ -25,6 +25,7 @@ gem 'figaro'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'pundit'
 
 
 

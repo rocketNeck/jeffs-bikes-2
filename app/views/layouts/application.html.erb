@@ -11,7 +11,7 @@
   <%= content_tag(:div, flash[:notice], id: "flash_error") if flash[:notice] %>
   <%= content_tag(:div, flash[:alert], id: "flash_error") if flash[:alert] %>
   <div class="sign-out">
-    <%=link_to("Sign out", destroy_user_session_path)%>
+    <%= link_to "Sign out", destroy_user_session_path, method: 'DELETE' %>
   </div>
 <%= yield %>
 

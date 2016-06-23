@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>JeffsBikes2</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= render 'partials/nav' %>
-  <%= content_tag(:div, flash[:error], id: "flash_error") if flash[:error] %>
-  <%= content_tag(:div, flash[:notice], id: "flash_error") if flash[:notice] %>
-  <%= content_tag(:div, flash[:alert], id: "flash_error") if flash[:alert] %>
-
-  <%= yield %>
-
-  <%= render 'partials/footer' %>
-</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Jeff's Bikes" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Jeff's Bikes" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header id="header">
+      <h1>Jeff's Bikes</h1>
+    </header>
+    <%= render 'partials/nav' %>
+    <main role="main" id="container">
+       <%= render 'partials/messages' %>
+       <%= yield %>
+    </main>
+    <%= render 'partials/footer' %>
+  </body>
 </html>

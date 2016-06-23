@@ -1,16 +1,10 @@
 <p id="notice"><%= notice %></p>
-<%= form_tag bikes_path, :method => 'get' do %>
-  <%= text_field_tag(
-      :search,
-      params[:search],
-      placeholder: "Search"
-  ) %>
-  <%= submit_tag "Search" %>
-<% end %>
+
 <%= render 'search_tools' %>
 
 <%= render 'bike_table' %>
-
+<%= will_paginate @bikes %>
 <br>
 
-<%= link_to 'New Bike', new_bike_path %>
+
+<%= link_to 'New Bike', new_bike_path%>

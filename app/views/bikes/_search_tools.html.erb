@@ -1,0 +1,8 @@
+<%= form_tag bikes_path, :method => 'get' do %>
+  <%= text_field_tag(
+      :search,
+      params[:search],
+      placeholder: "Search By Company"
+  ) %>
+  <%= submit_tag "Search Company" %>
+<% end %>

@@ -66,8 +66,9 @@
     <%= @bike.serial_number_location %>
   </p>
 </div>
-<div class="">
-  <%= link_to 'Edit', edit_bike_path(@bike) %> |
-  <%= link_to 'Back', bikes_path %>
+<div class="backlinks">
+  <%= link_to 'Edit', edit_bike_path(@bike), {class: "back-links"} %> |
+  <%= link_to 'Back', bikes_path, {class: "back-links"} %>
 </div>
+
 <%= render 'comments' %>

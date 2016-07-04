@@ -1,14 +1,16 @@
 class User < ActiveRecord::Base
+
   enum role: [:user, :admin]
+
+  has_many :comments
+  has_many :bikes
+  has_many :comments, through: :bikes
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
     self.role ||= :user
   end
 
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 

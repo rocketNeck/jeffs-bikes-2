@@ -1,0 +1,8 @@
+<%= div_for(comment) do %>
+  <p>
+    <%= comment %> says: </br>
+    <strong> Posted <%= time_ago_in_words(comment.created_at)%></strong></br>
+    <%= h(comment.content) %>
+  </p>
+  <%= button_to 'Delete', comment, method: :delete, data: { confirm: "Sure?"} %>
+<% end %>

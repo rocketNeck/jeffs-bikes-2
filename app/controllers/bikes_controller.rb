@@ -6,7 +6,6 @@ class BikesController < ApplicationController
   def index
     @bikes = Bike.search(params[:search]).paginate(:page => params[:page], :per_page => 30)
   end
-
   # GET /bikes/1
   # GET /bikes/1.json
   def show
@@ -24,9 +23,9 @@ class BikesController < ApplicationController
   # POST /bikes
   # POST /bikes.json
   def create
-    @bike = Bike.new(bike_params)
+    @bike = current_user.bikes.build(bike_params)
 
-    respond_to do |format|
+    respond_to do |format| #web service support format response depending on http request
       if @bike.save
         format.html { redirect_to @bike, notice: 'Bike was successfully created.' }
         format.json { render :show, status: :created, location: @bike }

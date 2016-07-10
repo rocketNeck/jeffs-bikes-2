@@ -71,4 +71,10 @@
   <%= link_to 'Back', bikes_path, {class: "back-links"} %>
 </div>
 
-<%= render 'comments' %>
+<%= render :partial => @bike.comments %>
+
+<%= form_for [@bike, Comment.new] do |f| %>
+  <p><%= f.label :content, "New Comment"%></p>
+  <p><%= f.text_area :content %></p>
+  <p><%= f.submit "Add Comment" %></p>
+<% end %>

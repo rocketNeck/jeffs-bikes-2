@@ -4,5 +4,6 @@
     <strong> Posted <%= time_ago_in_words(comment.created_at)%></strong></br>
     <%= h(comment.content) %>
   </p>
-  <%= button_to 'Delete', comment, method: :delete, data: { confirm: "Sure?"} %>
+
 <% end %>
+<%= button_to "Delete", bike_comment_url(comment), method: :delete, data: {confirm: "Are you sure?"} %>

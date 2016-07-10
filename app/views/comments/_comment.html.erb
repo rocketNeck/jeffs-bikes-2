@@ -1,9 +1,10 @@
 <%= div_for(comment) do %>
   <p>
-    <%= comment %> says: </br>
+    <%= comment.user.name %> says: </br>
     <strong> Posted <%= time_ago_in_words(comment.created_at)%></strong></br>
     <%= h(comment.content) %>
   </p>
-
+  <% if current_user.id == comment.user_id %>
+    <%= button_to "Delete", bike_comment_url(@bike, comment.id), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
 <% end %>
-<%= button_to "Delete", bike_comment_url(comment), method: :delete, data: {confirm: "Are you sure?"} %>

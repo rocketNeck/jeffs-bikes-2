@@ -60,14 +60,15 @@ class BikesController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bike
-      @bike = Bike.find(params[:id])
+      @bike = Bike.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bike_params
-      params.require(:bike).permit(:company, :year, :month, :serial_number_1, :serial_number_2, :model, :rim_size, :type, :metal, :top_tube, :head_tube, :color, :serial_number_location)
+      params.require(:bike).permit(:company, :year, :month, :serial_number_1, :serial_number_2, :model, :rim_size, :type, :metal, :top_tube, :head_tube, :color, :serial_number_location, :user_id)
     end
 end

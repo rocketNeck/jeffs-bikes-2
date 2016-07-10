@@ -8,10 +8,10 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @bike, notice: "Comment was added!"}
+        format.html { redirect_to @bike}
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { render actioin: "new"}
+        format.html { render action: "new"}
         format.json {render json: @comment.errors, status: :unprocessable_entity}
       end
     end
@@ -25,10 +25,19 @@ class CommentsController < ApplicationController
   #   @comment.update(post_params)
   #   redirect_to user_path(current_user)
   # end
+  # def destroy
+  #   @comment.delete
+  #   respond_to do |format|
+  #     format.html { redirect_to bikes_url, notice: 'Comment deleted.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
   def destroy
-    @comment = Comment.find(params[:id])
-    @comment.delete
-    render @bike
+    bike = Bike.find_by_id(params[:bike_id])
+    comment = bike.comments.find_by_id(params[:id])
+    comment.destroy
+    redirect_to bike
   end
 
   private

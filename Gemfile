@@ -24,7 +24,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'sqlite3'  #put in test, use postgresql for deploy to heroku....
   gem 'spring'
-  gem 'byebug'
+  gem 'pry'
   gem 'guard'
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i   #use for testing
   gem 'guard-rspec'

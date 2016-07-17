@@ -3,12 +3,14 @@ class Bike < ActiveRecord::Base
   has_many :comments
 
   #simple search function
-  def self.search(search)
+  def self.search(field, search)
     if search
-      where(["company LIKE ?","%#{search}"])
+      #binding.pry
+      #where("? LIKE ?", "%#{field}", "%#{search}")
+      where(field.to_sym => search)
     else
       all
     end
   end
-  
+
 end

@@ -35,8 +35,12 @@
         <td><%= bike.color %></td>
         <td><%= bike.serial_number_location %></td>
         <td><%= link_to 'Show', bike %></td>
-        <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
-        <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.id == bike.user_id %>
+          <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
+        <% end %>
+        <% if current_user.id == bike.user_id %>
+          <td><%= link_to 'Delete', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

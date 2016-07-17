@@ -67,7 +67,9 @@
   </p>
 </div>
 <div class="backlinks">
-  <%= link_to 'Edit', edit_bike_path(@bike), {class: "back-links"} %> |
+  <% if current_user.id == @bike.user_id %>
+    <%= link_to 'Edit', edit_bike_path(@bike), {class: "back-links"} %> |
+  <% end %>
   <%= link_to 'Back', bikes_path, {class: "back-links"} %>
 </div>
 

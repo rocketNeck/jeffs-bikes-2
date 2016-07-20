@@ -1,18 +1,18 @@
 class BikePolicy < ApplicationPolicy
-  attr_reader :current_user, :model
+  attr_reader :user, :model
 
-  def initialize(current_user, model)
-    @current_user = current_user
+  def initialize(user, model)
+    @user = user
     @bike = model
   end
 
   def update?
-    @current_user.admin? || @current_user.id == @bike.user_id
+    @user.admin? || @user.id == @bike.user_id
   end
 
   def destroy?
-    return false if @current_user.id == @bike.user_id
-    @current_user.admin?
+    return false if @user.id == @bike.user_id
+    @user.admin?
   end
 
 end

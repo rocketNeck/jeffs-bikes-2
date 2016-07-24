@@ -5,8 +5,6 @@ class Bike < ActiveRecord::Base
   #simple search function
   def self.search(field, search)
     if search
-      #binding.pry
-      #where("? LIKE ?", "%#{field}", "%#{search}")
       where(field.to_sym => search)
     else
       all

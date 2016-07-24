@@ -5,15 +5,8 @@ Rails.application.routes.draw do
   resources :users
 
   resources :bikes do
-    resources :comments, only: [:create, :edit, :update, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
 
 
 end

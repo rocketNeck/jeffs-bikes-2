@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
-  #after_action :verify_authorized
 
   def create
     @bike = Bike.find(params[:bike_id])
-  #  @comment = @bike.comments.create(params[:comment])
     @comment = @bike.comments.create!(params.require(:comment).permit!)
     @comment.user_id = current_user.id
     respond_to do |format|
@@ -16,22 +14,6 @@ class CommentsController < ApplicationController
       end
     end
   end
-
-  # def edit
-  #   @comment = Comment.find(params[:])
-  # end
-  # def update
-  #   @comment = Comment.find(params[:id])
-  #   @comment.update(post_params)
-  #   redirect_to user_path(current_user)
-  # end
-  # def destroy
-  #   @comment.delete
-  #   respond_to do |format|
-  #     format.html { redirect_to bikes_url, notice: 'Comment deleted.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
 
   def destroy
     bike = Bike.find_by_id(params[:bike_id])

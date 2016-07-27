@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   enum role: [:user, :admin]
 
   has_many :comments
@@ -21,4 +20,13 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
     end
   end
+
+  def self.current_user_bikes
+    current_user.bikes
+  end
+
+  def self.current_user_comments
+    current_user.comments
+  end
+
 end

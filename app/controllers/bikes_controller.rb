@@ -7,7 +7,6 @@ class BikesController < ApplicationController
     @bikes = Bike.search(params[:field], params[:search])
   end
   # GET /bikes/1
-  # GET /bikes/1.json
   def show
   end
 

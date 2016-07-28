@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="bike-stats">
+<div class="bike-stats" style="text-align: center;">
   <p>
     <strong>Company:</strong>
     <%= @bike.company %>
@@ -65,18 +65,14 @@
     <strong>Serial number location:</strong>
     <%= @bike.serial_number_location %>
   </p>
-</div>
-<div class="backlinks">
-  <% if current_user.id == @bike.user_id %>
-    <%= link_to 'Edit', edit_bike_path(@bike), {class: "back-links"} %> |
-  <% end %>
-  <%= link_to 'Back', bikes_path, {class: "back-links"} %>
+
+  <div class="backlinks" style="font-size: 40px;">
+    <% if current_user.id == @bike.user_id %>
+      <%= link_to 'Edit', edit_bike_path(@bike), {class: "back-links"} %> |
+    <% end %>
+    <%= link_to 'Back', bikes_path, {class: "back-links"} %>
+  </div>
 </div>
 
+<%= render '/comments/comment_form' %>
 <%= render :partial => @bike.comments %>
-
-<%= form_for [@bike, Comment.new] do |f| %>
-  <p><%= f.label :content, "New Comment"%></p>
-  <p><%= f.text_area :content %></p>
-  <p><%= f.submit "Add Comment" %></p>
-<% end %>

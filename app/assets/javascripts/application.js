@@ -26,3 +26,10 @@ $(document).ready(function () {
     else { $nav.removeClass('fixed'); }
   });
 });
+
+$(document).ready(function (){
+  var $alert = $('.alert');
+  $('button.close').on('click', function(){
+    $alert.hide();
+  })
+});

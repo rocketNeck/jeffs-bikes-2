@@ -1,3 +1,25 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_comment {
+  margin-top: 3px;
+  text-align: center;
+}
+
+.new_comment  textarea {
+  width: 50%;
+  min-height: 200px;
+  resize: none;
+  border: 2px solid $color-accent;
+}
+
+.old-comment {
+  text-align: center;
+  width: 50%;
+  background-color: white;
+}
+
+.comment a {
+  text-align: right;
+}

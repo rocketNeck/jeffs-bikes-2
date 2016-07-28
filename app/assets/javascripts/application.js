@@ -16,6 +16,7 @@
 //= require_tree .
 
 
+// lock nav at the top of the page
 $(document).ready(function () {
   var $nav = $('#navigation'),
       posTop = $nav.position().top;

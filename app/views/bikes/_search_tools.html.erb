@@ -1,14 +1,16 @@
-<%= form_tag bikes_path, :method => 'get' do %>
-  <select name = "field">
-   <option value = "company">Company</option>
-   <option value = "serial_number_1">Serial Number</option>
-   <option value = "year">Year</option>
-   <option value = "model">Model</option>
-  </select>
-  <%= text_field_tag(
-      :search,
-      params[:search],
-      placeholder: "Search"
-  ) %>
-  <%= submit_tag "Search" %>
-<% end %>
+<div class="search-tools">
+  <%= form_tag bikes_path, class: "search-form", :method => 'get' do %>
+    <select name = "field">
+     <option value = "company">Company</option>
+     <option value = "serial_number_1">Serial Number</option>
+     <option value = "year">Year</option>
+     <option value = "model">Model</option>
+    </select>
+    <%= text_field_tag(
+        :search,
+        params[:search],
+        placeholder: "Search"
+    ) %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>

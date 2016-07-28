@@ -1,78 +1,90 @@
 <p id="notice"><%= notice %></p>
 
-<div class="bike-stats" style="text-align: center;">
-  <p>
-    <strong>Company:</strong>
-    <%= @bike.company %>
-  </p>
+<div class="bike-info" style='width:100%; text-align:center;'>
+  <div class="inner-bike-info"style='max-width:80%;text-align:center;'>
 
-  <p>
-    <strong>Year:</strong>
-    <%= @bike.year %>
-  </p>
 
-  <p>
-    <strong>Month:</strong>
-    <%= @bike.month %>
-  </p>
+    <div class="bike-stats" style="width: 400px; text-align: center; display:inline-block; vertical-align: top;padding-right: 10px;">
+      <p>
+        <strong>Company:</strong>
+        <%= @bike.company %>
+      </p>
 
-  <p>
-    <strong>Serial number 1:</strong>
-    <%= @bike.serial_number_1 %>
-  </p>
+      <p>
+        <strong>Year:</strong>
+        <%= @bike.year %>
+      </p>
 
-  <p>
-    <strong>Serial number 2:</strong>
-    <%= @bike.serial_number_2 %>
-  </p>
+      <p>
+        <strong>Month:</strong>
+        <%= @bike.month %>
+      </p>
 
-  <p>
-    <strong>Model:</strong>
-    <%= @bike.model %>
-  </p>
+      <p>
+        <strong>Serial number 1:</strong>
+        <%= @bike.serial_number_1 %>
+      </p>
 
-  <p>
-    <strong>Rim size:</strong>
-    <%= @bike.rim_size %>
-  </p>
+      <p>
+        <strong>Serial number 2:</strong>
+        <%= @bike.serial_number_2 %>
+      </p>
 
-  <p>
-    <strong>Type:</strong>
-    <%= @bike.bike_type %>
-  </p>
+      <p>
+        <strong>Model:</strong>
+        <%= @bike.model %>
+      </p>
 
-  <p>
-    <strong>Metal:</strong>
-    <%= @bike.metal %>
-  </p>
+      <p>
+        <strong>Rim size:</strong>
+        <%= @bike.rim_size %>
+      </p>
 
-  <p>
-    <strong>Top tube:</strong>
-    <%= @bike.top_tube %>
-  </p>
+      <p>
+        <strong>Type:</strong>
+        <%= @bike.bike_type %>
+      </p>
 
-  <p>
-    <strong>Head tube:</strong>
-    <%= @bike.head_tube %>
-  </p>
+      <p>
+        <strong>Metal:</strong>
+        <%= @bike.metal %>
+      </p>
 
-  <p>
-    <strong>Color:</strong>
-    <%= @bike.color %>
-  </p>
+      <p>
+        <strong>Top tube:</strong>
+        <%= @bike.top_tube %>
+      </p>
 
-  <p>
-    <strong>Serial number location:</strong>
-    <%= @bike.serial_number_location %>
-  </p>
+      <p>
+        <strong>Head tube:</strong>
+        <%= @bike.head_tube %>
+      </p>
 
-  <div class="backlinks" style="font-size: 40px;">
-    <% if current_user.id == @bike.user_id %>
-      <%= link_to 'Edit', edit_bike_path(@bike), {class: "back-links"} %> |
-    <% end %>
-    <%= link_to 'Back', bikes_path, {class: "back-links"} %>
+      <p>
+        <strong>Color:</strong>
+        <%= @bike.color %>
+      </p>
+
+      <p>
+        <strong>Serial number location:</strong>
+        <%= @bike.serial_number_location %>
+      </p>
+    </div>
+
+    <div class="bike-img">
+      <p>
+        bike image
+      </p>
+    </div>
+
   </div>
 </div>
 
+<div class="backlinks" style="font-size: 20px;dispaly:float;text-align:center;">
+  <% if current_user.id == @bike.user_id %>
+    <%= link_to 'Edit', edit_bike_path(@bike), {class: "back-links"} %> |
+  <% end %>
+  <%= link_to 'Back', bikes_path, {class: "back-links"} %>
+</div>
 <%= render '/comments/comment_form' %>
 <%= render :partial => @bike.comments %>

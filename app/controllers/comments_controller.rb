@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render action: "new"}
-        format.json {render json: @comment.errors, status: :unprocessable_entity}
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end

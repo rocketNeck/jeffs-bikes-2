@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   after_action :verify_authorized
 
-  # def index
-  #   @users = User.all
-  #   authorize User
-  # end
-
   def index
     @users = User.all
     authorize User
@@ -17,6 +12,9 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def edit
+    @user = current_user
+  end
 
   def update
     @user = User.find(params[:id])

@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  ######### overwrite devise permissions 
+  ######### overwrite devise permissions
   private
 
   def sign_up_params

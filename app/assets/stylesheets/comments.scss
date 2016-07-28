@@ -11,15 +11,50 @@
   width: 50%;
   min-height: 200px;
   resize: none;
-  border: 2px solid $color-accent;
+  border: 1px solid $color-accent;
 }
 
 .old-comment {
-  text-align: center;
-  width: 50%;
+  margin: 0 auto;
   background-color: white;
+  width: 50%;
+  border: 1px solid $color-accent;
 }
 
-.comment a {
-  text-align: right;
+.bike-info {
+  width:100%;
+  text-align:center;
+}
+
+.inner-bike-info {
+  max-width:80%;
+  text-align:center;
+  margin:auto;
+}
+
+.bike-stats {
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 0;
+  margin-right: 0;
+  border-bottom: solid white;
+  border-top: solid white;
+}
+
+.bike-img {
+  width: 50%;
+  background-color: pink;
+  min-height: 464px;
+
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  border-bottom: solid white;
+  margin-left: 0;
+  padding-left: 0;
+  border-top: solid white;
+  content:url(https://c2.staticflickr.com/4/3018/2821394872_4ed776c7ea_z.jpg?zz&#x3D;1);
+  max-height: 464px;
 }

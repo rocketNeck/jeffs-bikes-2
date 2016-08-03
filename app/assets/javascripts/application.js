@@ -18,6 +18,7 @@
 
 // lock nav at the top of the page
 $(document).ready(function () {
+
   var $nav = $('#navigation'),
       posTop = $nav.position().top;
   $(window).scroll(function () {
@@ -25,11 +26,11 @@ $(document).ready(function () {
     if (y > posTop) { $nav.addClass('fixed'); }
     else { $nav.removeClass('fixed'); }
   });
-});
 
-$(document).ready(function (){
-  var $alert = $('.alert');
+
+  var $alert = $('.alert');  // this is so the alert div will go away properly 
   $('button.close').on('click', function(){
     $alert.hide();
   })
+
 });

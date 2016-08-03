@@ -35,10 +35,10 @@
         <td><%= bike.color %></td>
         <td><%= bike.serial_number_location %></td>
         <td><%= link_to 'Show', bike %></td>
-        <% if current_user.id == bike.user_id %>
+        <% if current_user.id == bike.user_id || current_user.role == "admin" %>
           <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <% end %>
-        <% if current_user.id == bike.user_id %>
+        <% if current_user.id == bike.user_id || current_user.role == "admin"%>
           <td><%= link_to 'Delete', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>

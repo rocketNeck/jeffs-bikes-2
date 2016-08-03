@@ -70,13 +70,7 @@
         <%= @bike.serial_number_location %>
       </p>
     </div>
-
-    <div class="bike-img">
-      <p>
-        bike image
-      </p>
-    </div>
-
+    <%= image_tag @bike.image_url, class: "bike-img" %>
   </div>
 </div>
 

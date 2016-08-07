@@ -28,10 +28,10 @@ $(document).ready(function () {
   });
 
 
-// properly close alert div's 
+// properly close alert div's
   var $alert = $('.alert');
   $('button.close').on('click', function(){
     $alert.hide();
-  })
+  });
 
 });

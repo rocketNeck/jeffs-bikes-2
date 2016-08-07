@@ -28,7 +28,8 @@ $(document).ready(function () {
   });
 
 
-  var $alert = $('.alert');  // this is so the alert div will go away properly 
+// properly close alert div's 
+  var $alert = $('.alert');
   $('button.close').on('click', function(){
     $alert.hide();
   })

@@ -1,15 +1,15 @@
+
 <div class="old-comment">
   <%= div_for(comment) do %>
-      <p style="color: grey;">
-        Posted <%= time_ago_in_words(comment.created_at)%> ago |
-        <strong> <%= comment.user.name %> says:</strong>
-      </p>
-      <p style="color: black;">
-        <%= h(comment.content) %>
-      </p>
-      <% if current_user.id == comment.user_id %>
-        <%= link_to "Delete", bike_comment_url(@bike, comment.id), method: :delete, data: {confirm: "Are you sure?"} %>
-      <% end %>
-
+    <p style="color: grey;">
+      Posted <%= time_ago_in_words(comment.created_at)%> ago |
+      <strong> <%= comment.user.name %> says:</strong>
+    </p>
+    <p style="color: black;">
+      <%= h(comment.content) %>
+    </p>
+    <% if current_user.id == comment.user_id %>
+      <%= link_to "Delete", bike_comment_url(@bike, comment.id), method: :delete, data: {confirm: "Are you sure?"} %>
+    <% end %>
   <% end %>
 </div>

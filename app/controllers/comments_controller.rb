@@ -2,14 +2,15 @@ class CommentsController < ApplicationController
 
   def create
     @bike = Bike.find(params[:bike_id])
-    @comment = @bike.comments.create!(params.require(:comment).permit!)
+    @comment = @bike.comments.create(post_params)
     @comment.user_id = current_user.id
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @bike}
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { render action: "new"}
+        format.html { redirect_to @bike, alert: "Can not leave comment empty" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

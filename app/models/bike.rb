@@ -14,4 +14,14 @@ class Bike < ActiveRecord::Base
     end
   end
 
+
+  def all_tags=(all_tags)
+    all_tags.each do |i, tag|
+      self.tags.build(tag)
+    end
+  end
+
+  # def all_tags
+  # end
+
 end

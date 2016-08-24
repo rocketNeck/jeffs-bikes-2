@@ -33,6 +33,6 @@ class CommentsController < ApplicationController
 
   private
   def post_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :all_tags)
   end
 end

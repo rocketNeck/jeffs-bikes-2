@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :bikes do
-    resources :comments, only: [:create, :destroy, :show]
+    resources :comments, only: [:create, :destroy, :show, :index]
   end
 
 

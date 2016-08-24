@@ -9,14 +9,14 @@ class Comment < ActiveRecord::Base
   validates :bike, presence: true
   validates_uniqueness_of :id
 
-  # def tag_attributes=(tag_attributes)
+  # def all_tags=(tags)
   #   tag_attributes.each do |i, attribute|
   #     self.tags.build(attribute)
   #   end
   # end
 
-
-  # def self.with_unread_messages
-  #   joins(:messages).merge( Message.unread )
+  # def all_tags
+  #   self.tags.map(&:name).join(", ")
   # end
+
 end

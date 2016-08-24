@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824190550) do
+ActiveRecord::Schema.define(version: 20160824191454) do
 
   create_table "bikes", force: :cascade do |t|
     t.string   "company"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20160824190550) do
     t.integer  "user_id"
     t.string   "image_url"
   end
+
+  create_table "comment_tags", force: :cascade do |t|
+    t.integer  "comment_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comment_tags", ["comment_id"], name: "index_comment_tags_on_comment_id"
+  add_index "comment_tags", ["tag_id"], name: "index_comment_tags_on_tag_id"
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"

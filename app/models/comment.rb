@@ -9,11 +9,11 @@ class Comment < ActiveRecord::Base
   validates :bike, presence: true
   validates_uniqueness_of :id
 
-  # def all_tags=(tags)
-  #   tag_attributes.each do |i, attribute|
-  #     self.tags.build(attribute)
-  #   end
-  # end
+  def all_tags=(tags)
+    tags.each do |i, attribute|
+      self.tags.build(attribute)
+    end
+  end
 
   # def all_tags
   #   self.tags.map(&:name).join(", ")

@@ -2,6 +2,9 @@ class Bike < ActiveRecord::Base
   belongs_to :user
   has_many :comments
 
+  has_many :bike_tags
+  has_many :tags, through: :bike_tags
+
   #simple search function
   def self.search(field, search)
     if search
@@ -10,5 +13,5 @@ class Bike < ActiveRecord::Base
       all
     end
   end
-  
+
 end

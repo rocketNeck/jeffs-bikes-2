@@ -10,5 +10,5 @@ class Bike < ActiveRecord::Base
       all
     end
   end
-
+  
 end

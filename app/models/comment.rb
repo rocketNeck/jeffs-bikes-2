@@ -1,14 +1,16 @@
 class Comment < ActiveRecord::Base
-  #attr_accessible :attribute_name
+  attr_reader :set_user_id
   belongs_to :user
   belongs_to :bike
   validates :content, presence: true
   validates :bike, presence: true
   validates_uniqueness_of :id
 
-  def self.set_bike_id=(value)
-    write_attribute(:bike_id, value)
-  end
+  # def tag_attributes=(tag_attributes)
+  #   tag_attributes.each do |i, attribute|
+  #     self.tags.build(attribute)
+  #   end
+  # end
 
 
   # def self.with_unread_messages

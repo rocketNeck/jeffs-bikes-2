@@ -1,5 +1,6 @@
 <%= form_for [@bike, Comment.new] do |f| %>
   <p><%= f.label :content, "New Comment"%></p>
   <p><%= f.text_area :content %></p>
+  <!--  nested attributes for tag NESTED FORM YEA! -->
   <p><%= f.submit "Add Comment" %></p>
 <% end %>

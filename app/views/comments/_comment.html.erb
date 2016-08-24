@@ -11,5 +11,6 @@
     <% if current_user.id == comment.user_id %>
       <%= link_to "Delete", bike_comment_url(@bike, comment.id), method: :delete, data: {confirm: "Are you sure?"} %>
     <% end %>
+    <!-- show all the tags for each comment -->
   <% end %>
 </div>

@@ -11,65 +11,61 @@
         </ul>
       </div>
     <% end %>
+    <div class="bike-input-fields">
 
-    <div class="field">
-      <%= f.label :company %><br>
-      <%= f.text_field :company %>
-    </div>
-    <div class="field">
-      <%= f.label :year %><br>
-      <%= f.text_field :year %>
-    </div>
-    <div class="field">
-      <%= f.label :month %><br>
-      <%= f.text_field :month %>
-    </div>
-    <div class="field">
-      <%= f.label :serial_number_1 %><br>
-      <%= f.text_field :serial_number_1 %>
-    </div>
-    <div class="field">
-      <%= f.label :serial_number_2 %><br>
-      <%= f.text_field :serial_number_2 %>
-    </div>
-    <div class="field">
-      <%= f.label :model %><br>
-      <%= f.text_field :model %>
-    </div>
-    <div class="field">
-      <%= f.label :rim_size %><br>
-      <%= f.text_field :rim_size %>
-    </div>
-    <div class="field">
-      <%= f.label :type %><br>
-      <%= f.text_field :bike_type %>
-    </div>
-    <div class="field">
-      <%= f.label :metal %><br>
-      <%= f.text_field :metal %>
-    </div>
-    <div class="field">
-      <%= f.label :top_tube %><br>
-      <%= f.text_field :top_tube %>
-    </div>
-    <div class="field">
-      <%= f.label :head_tube %><br>
-      <%= f.text_field :head_tube %>
-    </div>
-    <div class="field">
-      <%= f.label :color %><br>
-      <%= f.text_field :color %>
-    </div>
-    <div class="field">
-      <%= f.label :serial_number_location %><br>
-      <%= f.text_field :serial_number_location %>
-    </div>
-    <div class="field">
-      <%= f.label :image_url %><br>
-      <%= f.text_field :image_url %>
+      <div class="first-col">
+        <div class="field">
+          <%= f.text_field :company, placeholder: "companys" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :year, placeholder: "year" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :month, placeholder: "month" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :serial_number_1, placeholder: "serial number 1" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :serial_number_2, placeholder: "serial number 2" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :model, placeholder: "model" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :rim_size, placeholder: "rim size" %>
+        </div>
+      </div>
+
+      <div class="second-col">
+        <div class="field">
+          <%= f.text_field :bike_type, placeholder: "bike type" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :metal, placeholder: "metal" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :top_tube, placeholder: "top tube" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :head_tube, placeholder: "head tube" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :color, placeholder: "color" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :serial_number_location, placeholder: "serial number location" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :image_url, placeholder: "Image URL" %>
+        </div>
+      </div>
+
+      <div class="tag-input field">
+        <%= f.text_field :all_tags, placeholder: "Tags, seperated, with, comma, for, each, tag" %>
+      </div>
     </div>
 
-      <!--  nested attributes for tag NESTED FORM YEA! -->
 
     <div class="actions">
       <%= f.submit %>

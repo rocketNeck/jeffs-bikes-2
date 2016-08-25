@@ -1,0 +1,38 @@
+#new-bike-form {
+  text-align: center;
+  height: 500px;
+  width: 100%;
+
+}
+
+.bike-input-fields input{
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 5px;
+  opacity: 70%;
+}
+//
+.first-col {
+  display: inline-block;
+  width: 40%;
+  height: 100%;
+}
+.second-col {
+  display: inline-block;
+  width: 40%;
+  height: 100%;
+}
+//
+// .bike-input-fields .field {
+//   width: 100%;
+// }
+
+.bike-all-tags {
+  width: auto;
+}
+.tag-input input{
+  width: 80%;
+  font-size: 20px;
+
+}

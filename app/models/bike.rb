@@ -16,12 +16,17 @@ class Bike < ActiveRecord::Base
 
 
   def all_tags=(all_tags)
-    all_tags.each do |i, tag|
-      self.tags.build(tag)
+    self.tags = all_tags.split(", ").map do |name|
+      Tag.where(name: name.strip).first_or_create!
     end
   end
 
-  # def all_tags
-  # end
+  def all_tags
+    self.tags.map(&:name).join(", ")
+  end
+
+  def self.tagged_with(name)
+    Tag.find_by_name!(name).bikes
+  end
 
 end

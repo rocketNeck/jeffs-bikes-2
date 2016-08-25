@@ -80,5 +80,11 @@
   <% end %>
   <%= link_to 'Back', bikes_path, {class: "back-links"} %>
 </div>
+<div class="tag-cloud" style="text-align:center;background-color:white;">
+  <p style="font-size:18px;">
+    <%= raw tag_links(@bike.all_tags) %> <!-- from helper -->
+  </p>
+</div>
+
 <%= render '/comments/comment_form' %>
 <%= render :partial => @bike.comments %>

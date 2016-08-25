@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy, :show, :index]
   end
 
-
+  get 'tags/:tag', to: 'bikes#index', as: "tag"
 end

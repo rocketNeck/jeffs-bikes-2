@@ -4,7 +4,11 @@ class BikesController < ApplicationController
   # GET /bikes
   # GET /bikes.json
   def index
-    @bikes = Bike.search(params[:field], params[:search])
+    if params[:tag]
+      @bikes = Bike.tagged_with(params[:tag])
+    else
+      @bikes = Bike.search(params[:field], params[:search])
+    end
   end
   # GET /bikes/1
   def show
@@ -68,6 +72,6 @@ class BikesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bike_params
-      params.require(:bike).permit(:company, :year, :month, :serial_number_1, :serial_number_2, :model, :rim_size, :type, :metal, :top_tube, :head_tube, :color, :serial_number_location, :user_id, :image_url)
+      params.require(:bike).permit(:company, :year, :month, :serial_number_1, :serial_number_2, :model, :rim_size, :type, :metal, :top_tube, :head_tube, :color, :serial_number_location, :user_id, :image_url, :all_tags)
     end
 end
